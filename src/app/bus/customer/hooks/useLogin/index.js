@@ -36,6 +36,6 @@ export const useLogin = () => {
   return {
     logIn,
     handleChange,
-    token: data?.logIn
+    token: data?.logIn.token
   }
 }

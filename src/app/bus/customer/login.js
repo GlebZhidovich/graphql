@@ -1,4 +1,9 @@
 import { useLogin } from './hooks/useLogin';
+import { useEffect } from 'react';
+
+const saveToken = (token) => {
+  localStorage.setItem('token', token);
+}
 
 export const Login = () => {
 
@@ -9,7 +14,11 @@ export const Login = () => {
     event.preventDefault();
   }
 
-  console.log(token);
+  useEffect(() => {
+    if (token) {
+      saveToken(token);
+    }
+  }, [token]);
 
   return (
     <>
